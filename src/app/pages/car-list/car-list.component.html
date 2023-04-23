@@ -1,0 +1,14 @@
+<div class="container mt-4 mb-4">
+    <div class="row">
+        <div class="car-box col-lg-3 mt-3" *ngFor="let ci of carInfo; index as i">
+            <img src="{{ci.img}}">
+            <h1>{{ci.brand + ' ' + ci.model}}</h1>
+            <p>{{'Топливо: ' + ci.fuelType}}</p>
+            <p>{{'Объём двигателя: ' + ci.volume + ' л'}}</p>
+            <p>{{'КПП: ' + ci.transmission}}</p>
+            <p>{{ci.rentingPrice + ' тг/день'}}</p>
+            <br/>
+            <a class="buy-btn" [routerLink]="['/cars',ci.id]">Взять в прокат <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
