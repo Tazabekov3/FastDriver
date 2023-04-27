@@ -18,7 +18,7 @@ export class OrderDetailsService {
       volume: 1.6,
       fuelType: "бензин",
       rentingPrice: 9000,
-      available: true
+      isAvailable: true
     }, {
       id: 22,
       brand: "Toyota",
@@ -29,7 +29,7 @@ export class OrderDetailsService {
       volume: 1.6,
       fuelType: "бензин",
       rentingPrice: 9000,
-      available: true
+      isAvailable: true
     }, {
       id: 3,
       brand: "Toyota",
@@ -40,7 +40,7 @@ export class OrderDetailsService {
       volume: 1.6,
       fuelType: "бензин",
       rentingPrice: 9000,
-      available: true
+      isAvailable: true
     }
   ]
 
@@ -51,4 +51,15 @@ export class OrderDetailsService {
       time: 2,
     }
   ]
+
+  createOrder(orderedCarId: number, hours: number): void {
+    var newId = this.orderInfo.length + 1;
+    this.orderInfo.push(
+      {
+        id: newId,
+        carId: orderedCarId,
+        time: hours
+      }
+    )
+  }
 }
