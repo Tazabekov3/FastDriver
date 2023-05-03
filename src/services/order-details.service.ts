@@ -40,7 +40,7 @@ export class OrderDetailsService {
       volume: 1.6,
       fuelType: "бензин",
       rentingPrice: 9000,
-      isAvailable: true
+      isAvailable: false
     }
   ]
 
