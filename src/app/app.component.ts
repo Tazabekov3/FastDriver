@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Car, Order } from './models';
+import { OrderDetailsService } from 'src/services/order-details.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,9 @@ export class AppComponent {
   cars: Car[] = [];
   orders: Order[] = [];
 
-  ngOnInit() {
+  constructor(private orderDetailsService: OrderDetailsService) { }
 
+  ngOnInit() {
+    this.orderDetailsService.getCars().subscribe();
   }
 }

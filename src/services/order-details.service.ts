@@ -72,7 +72,14 @@ export class OrderDetailsService {
 
   BASE_URL = 'http://localhost:8000';
 
-  getCars() {
+  cars: Car[] = [];
+  orders: Order[] = [];
+
+  getCars(): Observable<Car[]> {
     return this.http.get<Car[]>('${this.BASE_URL}/api/cars/');
+  }
+
+  getOrders(): Observable<Order[]> {
+    return this.http.get<Order[]>('${this.BASE_URL}/api/orders/');
   }
 }
