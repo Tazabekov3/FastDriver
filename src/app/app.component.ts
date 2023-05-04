@@ -17,5 +17,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.orderDetailsService.getCars().subscribe();
+
+    this.orderDetailsService.getOrders().subscribe();
   }
 }
