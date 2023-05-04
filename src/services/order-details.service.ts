@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Car, Order } from 'src/app/models';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderDetailsService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   carInfo = [
     {
@@ -65,5 +68,11 @@ export class OrderDetailsService {
 
   cancelOrder(orderId: number):void {
     this.orderInfo = this.orderInfo.filter(item => item.id !== orderId);
+  }
+
+  BASE_URL = 'http://localhost:8000';
+
+  getCars() {
+    return this.http.get<Car[]>('${this.BASE_URL}/api/cars/');
   }
 }

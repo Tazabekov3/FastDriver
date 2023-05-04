@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Car, Order } from './models';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Fast Driver';
+
+  cars: Car[] = [];
+  orders: Order[] = [];
+
+  ngOnInit() {
+
+  }
 }
