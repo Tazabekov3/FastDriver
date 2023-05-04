@@ -53,7 +53,7 @@ export class OrderDetailsService {
   ]
 
   createOrder(orderedCarId: number, hours: number): void {
-    var newId = this.orderInfo[this.orderInfo.length - 1].id;
+    var newId = this.orderInfo[this.orderInfo.length - 1].id + 1;
     this.orderInfo.push(
       {
         id: newId,

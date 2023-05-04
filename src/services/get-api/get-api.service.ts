@@ -8,7 +8,7 @@ export class GetApiService {
 
   constructor(private http: HttpClient) { }
 
-  getData() {
-    return this.http.get('');
+  apiCall() {
+    return this.http.get('http://localhost:8000/api/');
   }
 }
