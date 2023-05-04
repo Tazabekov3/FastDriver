@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Authentify } from 'src/services/authentify/authentify.service';
 
 @Component({
   selector: 'app-login-page',
@@ -9,5 +10,9 @@ export class LoginPageComponent {
   email: string = '';
   password: string = '';
 
-  constructor() { }
+  constructor(public auth: Authentify) { }
+
+  login() {
+    this.auth.login(this.email, this.password).subscribe();
+  }
 }

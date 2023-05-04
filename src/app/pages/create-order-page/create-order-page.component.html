@@ -1,1 +1,15 @@
-<p>create-order-page works!</p>
+<div>
+  <form class="form-signin w-100 m-auto mt-3 text-center">
+      <!-- <h1 class="h3 mb-3 fw-normal">Please sign in</h1> -->
+
+      <div class="form-floating mt-5">
+        <input [(ngModel)]="licenseId" type="text" class="form-control" name="floatingLicense" placeholder="name@example.com">
+        <label for="floatingLicense">Номер водительского удостоверения</label>
+      </div>
+      <div class="form-floating">
+        <input [(ngModel)]="rentingTime" type="text" class="form-control" name="floatingHours" placeholder="Password">
+        <label for="floatingHours">Длительность проката (в часах)</label>
+      </div>
+      <button (click)="createOrder()" class="w-100 btn mt-3" type="submit">Оформить</button>
+  </form>
+</div>

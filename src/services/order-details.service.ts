@@ -53,7 +53,7 @@ export class OrderDetailsService {
   ]
 
   createOrder(orderedCarId: number, hours: number): void {
-    var newId = this.orderInfo.length + 1;
+    var newId = this.orderInfo[this.orderInfo.length - 1].id;
     this.orderInfo.push(
       {
         id: newId,
@@ -61,5 +61,9 @@ export class OrderDetailsService {
         time: hours
       }
     )
+  }
+
+  cancelOrder(orderId: number):void {
+    this.orderInfo = this.orderInfo.filter(item => item.id !== orderId);
   }
 }

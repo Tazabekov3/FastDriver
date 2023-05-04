@@ -16,7 +16,7 @@ export class OrderPageComponent {
 
   ngOnInit(): void {
     this.getOrderId = this.param.snapshot.paramMap.get('id');
-    console.log(this.getOrderId,'get-car');
+    console.log(this.getOrderId,'get-order');
     if(this.getOrderId)
     {
       this.carInfo =  this.service.carInfo.filter((value)=>{
@@ -25,5 +25,10 @@ export class OrderPageComponent {
         console.log(this.carInfo, 'order-info>>');
 
     }
+  }
+
+  cancelOrder() {
+    this.service.cancelOrder(this.getOrderId);
+    console.log("popped");
   }
 }

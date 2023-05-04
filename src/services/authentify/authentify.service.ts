@@ -6,8 +6,8 @@ import { tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
-  private readonly apiUrl = 'http://localhost:8000/api-token-auth/';
+export class Authentify {
+  private readonly apiUrl = 'http://localhost:8000/api/';
   private readonly jwtHelper = new JwtHelperService();
 
   constructor(private http: HttpClient) { }

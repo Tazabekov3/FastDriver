@@ -1,14 +1,15 @@
 <div class="container mt-5 mb-5">
-  <div class="" *ngFor="let ci of carInfo">
+  <div class="" *ngFor="let ci of orderInfo">
       <div class="car-box row align-items-start mt-3 mb-3">
-          <img class = "col" src="{{ci.img}}">
+          <!-- <img class = "col" src="{{ci.img}}"> -->
           <div class = "col">
-              <h1>{{ci.brand + ' ' + ci.model}}</h1>
-              <p>{{'Топливо: ' + ci.fuelType}}</p>
+              <h1>{{'Заказ №' + ci.id}}</h1>
+              <!-- <p>{{'Топливо: ' + ci.fuelType}}</p>
               <p>{{'Объём двигателя: ' + ci.volume + ' л'}}</p>
-              <p>{{'КПП: ' + ci.transmission}}</p>
-              <p>{{ci.rentingPrice + ' тг/день'}}</p>
-              <a class="buy-btn" [routerLink]="['/orders',ci.id]">Больше <i class="bi bi-arrow-right"></i></a>
+              <p>{{'КПП: ' + ci.transmission}}</p> -->
+              <p>{{ci.time + ' ч.'}}</p>
+              <!-- <a class="buy-btn" [routerLink]="['/orders',ci.id]">Больше <i class="bi bi-arrow-right"></i></a> -->
+              <a class="buy-btn" (click)="cancelOrder()" [routerLink]="">Отменить</a>
           </div>
           <br/>
       </div>

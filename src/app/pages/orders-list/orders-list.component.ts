@@ -11,9 +11,14 @@ export class OrdersListComponent {
 
   carInfo:any;
   orderInfo:any;
+  getOrderId:any;
 
   ngOnInit(): void {
     this.carInfo = this.service.carInfo;
     this.orderInfo = this.service.orderInfo;
+  }
+
+  cancelOrder():void {
+    this.service.cancelOrder(this.getOrderId);
   }
 }
